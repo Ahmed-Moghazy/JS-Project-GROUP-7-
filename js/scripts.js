@@ -47,6 +47,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   });
 });
+//==================================================Statr Home Page===========================================
 // stop nav
 let nav = document.querySelector(".header-nav");
 let scrol;
@@ -94,3 +95,94 @@ for (let i = 0; i < deleteBtn.length; i++) {
     }, 2000);
   });
 }
+//==================================================End Home Page===========================================
+//==================================================Statr Sign Up Page===========================================
+let fullName = document.querySelector("#full-name");
+let email = document.querySelector("#email");
+let password = document.querySelector("#password");
+let confirmPassword = document.querySelector("#confirm-password");
+let submit = document.querySelector("#submit");
+// Create An Array To Store Object Data
+let signupArray = [];
+// Check If Local Storag Has Data
+if (localStorage.getItem("UserInfo")) {
+  signupArray = JSON.parse(localStorage.getItem("UserInfo"));
+}
+// Tregger getUserDataFromLs Function
+
+// Submit Event
+if (submit) {
+  submit.addEventListener("click", (e) => {
+    // e.preventDefault();
+    if ((fullName.value !== "") & (email.value !== "") & (confirmPassword.value !== "") & (password.value !== "")) {
+      if (password.value == confirmPassword.value) {
+        addUserDataToArray(fullName.value, email.value, password.value);
+        fullName.value = "";
+        email.value = "";
+        password.value = "";
+        confirmPassword.value = "";
+        window.location.assign("../pages/login.html");
+      } else {
+        confirmPassword.value = "";
+        alert("password not same");
+      }
+    }
+  });
+}
+
+// Function To Add Object Of Data To Array Of Objects
+function addUserDataToArray(name, email, pass) {
+  //Object To Add To Array
+  const signupData = {
+    id: Date.now(),
+    fullname: name,
+    email: email,
+    password: pass,
+    login: false,
+  };
+  // Push Object To Array
+  signupArray.push(signupData);
+  // Add Data To Local Storage
+  addSignupDataToLS(signupArray);
+}
+//Function To Add Signup Data To Local Storage
+function addSignupDataToLS(array) {
+  window.localStorage.setItem("UserInfo", JSON.stringify(array));
+}
+//==================================================End Sign Up Page===========================================
+//==================================================Statr Log In Page===========================================
+
+let loginEmail = document.querySelector("#login-email");
+let loginPassword = document.querySelector("#login-password");
+let loginSubmit = document.querySelector("#login-submit");
+
+if (loginSubmit) {
+  loginSubmit.addEventListener("click", function (e) {
+    e.preventDefault();
+    if ((loginEmail !== "") & (loginPassword !== "")) {
+      let d = getUserDataFromLS();
+      if (d == true) {
+        window.location.assign("../index.html");
+      } else {
+        alert("Invalid Email Or Password");
+      }
+    }
+  });
+}
+function getUserDataFromLS() {
+  let data = window.localStorage.getItem("UserInfo");
+  if (data) {
+    let loginData = JSON.parse(data);
+    console.log(loginData.length);
+    for (let i = 0; i < loginData.length; i++) {
+      if (loginEmail.value == loginData[i].email) {
+        if (loginPassword.value == loginData[i].password) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+}
+
+//==================================================End Log In Page===========================================
