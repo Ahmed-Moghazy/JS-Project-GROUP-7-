@@ -85,6 +85,7 @@ for (let i = 0; i < addBtn.length; i++) {
     }, 2000);
   });
 }
+
 for (let i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", function () {
     counterTxt[i].value--;
@@ -113,15 +114,24 @@ if (localStorage.getItem("UserInfo")) {
 // Submit Event
 if (submit) {
   submit.addEventListener("click", (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if ((fullName.value !== "") & (email.value !== "") & (confirmPassword.value !== "") & (password.value !== "")) {
       if (password.value == confirmPassword.value) {
-        addUserDataToArray(fullName.value, email.value, password.value);
-        fullName.value = "";
-        email.value = "";
-        password.value = "";
-        confirmPassword.value = "";
-        window.location.assign("../pages/login.html");
+        signupArray = JSON.parse(localStorage.getItem("UserInfo"));
+        if (
+          signupArray.some((v) => {
+            return v.email == email.value;
+          })
+        ) {
+          alert("dublicate data");
+        } else {
+          addUserDataToArray(fullName.value, email.value, password.value);
+          fullName.value = "";
+          email.value = "";
+          password.value = "";
+          confirmPassword.value = "";
+          window.location.assign("../pages/login.html");
+        }
       } else {
         confirmPassword.value = "";
         alert("password not same");
@@ -140,6 +150,7 @@ function addUserDataToArray(name, email, pass) {
     password: pass,
     login: false,
   };
+
   // Push Object To Array
   signupArray.push(signupData);
   // Add Data To Local Storage
@@ -159,30 +170,57 @@ let loginSubmit = document.querySelector("#login-submit");
 if (loginSubmit) {
   loginSubmit.addEventListener("click", function (e) {
     e.preventDefault();
-    if ((loginEmail !== "") & (loginPassword !== "")) {
-      let d = getUserDataFromLS();
-      if (d == true) {
+    if (loginEmail.value !== "" && loginPassword.value !== "") {
+      let result = checkUserDataInLS();
+      if (result == true) {
         window.location.assign("../index.html");
+
+        loginBtn.innerHTML = "Log Out";
+        signBtn.style.display = "none";
       } else {
-        alert("Invalid Email Or Password");
+        console.log("envalid email or password");
       }
+    } else {
+      console.log("Enter Your Data");
     }
   });
 }
-function getUserDataFromLS() {
+function checkUserDataInLS() {
   let data = window.localStorage.getItem("UserInfo");
   if (data) {
     let loginData = JSON.parse(data);
-    console.log(loginData.length);
     for (let i = 0; i < loginData.length; i++) {
-      if (loginEmail.value == loginData[i].email) {
-        if (loginPassword.value == loginData[i].password) {
-          return true;
-        }
+      if ((loginData[i].email == loginEmail.value) & (loginData[i].password == loginPassword.value)) {
+        activeLogin(loginData[i].id);
+
+        return true;
       }
     }
-    return false;
   }
+  return false;
 }
+function activeLogin(userId) {
+  for (let i = 0; i < signupArray.length; i++) {
+    if (signupArray[i].id == userId) {
+      signupArray[i].login == false ? (signupArray[i].login = true) : (signupArray[i].login = false);
+    }
+  }
+  addSignupDataToLS(signupArray);
+}
+// function getUserDataFromLS() {
+//   let data = window.localStorage.getItem("UserInfo");
+//   if (data) {
+//     let loginData = JSON.parse(data);
+//     console.log(loginData.length);
+//     for (let i = 0; i < loginData.length; i++) {
+//       if (loginEmail.value == loginData[i].email) {
+//         if (loginPassword.value == loginData[i].password) {
+//           return true;
+//         }
+//       }
+//     }
+//     return false;
+//   }
+// }
 
 //==================================================End Log In Page===========================================
