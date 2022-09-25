@@ -12166,6 +12166,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   border: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .modal-b .addCart .delBtn {
   border: none;
 
@@ -12226,3 +12232,4 @@ section#contact form#contactForm :-ms-input-placeholder {
   top: 100px;
   right: 50px;
 }
+
