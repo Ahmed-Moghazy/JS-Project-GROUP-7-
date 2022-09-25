@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -17,14 +18,14 @@
     <link href="../css/styles.css" rel="stylesheet" />
 
     <style>
-      .checkout {
-        margin-top: 100px;
-      }
+        .checkout {
+            margin-top: 100px;
+        }
 
-      .contact {
-        margin-top: 100px;
-        border-radius: 30px;
-      }
+        .contact {
+            margin-top: 100px;
+            border-radius: 30px;
+        }
 
         label {
             color: white;
@@ -40,35 +41,38 @@
             margin-top: 40px
         }
 
-    </style>
-  </head>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-  <body id="page-top">
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+
+<body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand" href="#page-top">E-Commerce</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i class="fas fa-bars ms-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">E-Commerce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
 
-            <li class="nav-item"><a class="nav-link" href="./cart.html">Cart</a></li>
-            <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
-          </ul>
+                    <li class="nav-item"><a class="nav-link" href="./cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <div class="container">
@@ -112,7 +116,7 @@
     <!-- contact form -->
 
     <div class="container bg-dark p-4 contact">
-        <form class="row g-3 needs-validation d-flex justify-content-center" novalidate>
+        <form class="row g-3 needs-validation d-flex justify-content-center" id="sellingForm" novalidate>
             <div class="col-md-4">
                 <label for="validationCustom01" class="form-label">First name</label>
                 <input type="text" class="form-control nameValidate" id="validationCustom01" value="" required>
@@ -130,16 +134,15 @@
             <div class="col-md-4">
                 <label for="validationNumber" class="form-label">Phone Number</label>
                 <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="validationCustom03" aria-describedby="inputGroupPrepend"
-                        required>
+                    <input type="number" class="form-control" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" id="password" required>
                     <div class="invalid-feedback">
                         Please enter a Phone number.
                     </div>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="col-md-12 mb-3">
                 <label for="validationCustom04" class="form-label">Address</label>
-                <textarea class="form-control" id="validationCustom04" rows="2"></textarea>
+                <input type="text" class="form-control" id="validationCustom04" value="" required>
                 <div class="invalid-feedback">
                     Please provide a valid Address.
                 </div>
@@ -186,20 +189,23 @@
     </div>
 
     <footer class="footer py-4">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-          <div class="col-lg-4 my-3 my-lg-0">
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <div class="col-lg-4 text-lg-end">
-            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-          </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
 
 
@@ -338,25 +344,67 @@
         // }
 
 
-        (function () {
-            'use strict'
+        var p = document.querySelector("#password")
+        let isPasswordMatch = false;
+        let isPasswordValid = false;
+        const passwordPattern = /.{8,20}/;
+        const form = document.getElementById('sellingForm');
 
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.querySelectorAll('.needs-validation')
+        form.addEventListener('input', function (event) {
+            const formData = new FormData(form);
+            const password = p.value;
+            
+            // const repeatPassword = formData.get('repeatPassword');
 
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+            // Validate the pattern again. 
+            isPasswordValid = passwordPattern.test(password);
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
+            // This will either be true or false based on if the values are the same or not.
+            // isPasswordMatch = repeatPassword !== '' && password === repeatPassword;
+        });
+
+        form.addEventListener('submit', function (event) {
+            // If either the form is invalid or the passwords don't match, stop!
+            if (
+                form.checkValidity() === false ||
+                (isPasswordValid !== true)
+            ) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+
+
+
+
+
+
+
+
+
+
+
+        // (function () {
+        //     'use strict'
+
+        //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        //     var forms = document.querySelectorAll('.needs-validation')
+
+        //     // Loop over them and prevent submission
+        //     Array.prototype.slice.call(forms)
+        //         .forEach(function (form) {
+        //             form.addEventListener('submit', function (event) {
+        //                 if (!form.checkValidity()) {
+        //                     event.preventDefault()
+        //                     event.stopPropagation()
+        //                 }
+
+        //                 form.classList.add('was-validated')
+        //             }, false)
+        //         })
+        // })()
+
 
     </script>
 
@@ -364,12 +412,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
     <script src="../js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * * -->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-  </body>
+</body>
+
 </html>
