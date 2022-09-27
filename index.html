@@ -446,7 +446,7 @@
   <!-- Portfolio Modals-->
   <!-- Portfolio item 1 modal popup-->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+    <div class="modal-dialog" style= "width: 50%; margin: 10px auto">
       <div class="modal-content">
         <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
         <div class="container">
@@ -480,9 +480,18 @@
                   <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn product-confirm" type="button">Add To
                     Cart</button>
                   <div class="addCart" style="width: 30%">
-                    <button class="addBtn">+</button>
+                    <div class="d-flex flex-row align-items-center justify-content-between gap-2">
+                      <div class="d-flex gap-1">
+                        <button class="delBtn text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</button>
+
+                        <input class="numTxt border border-none" style="width: 30px" type="number" />
+
+                        <button class="addBtn text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</button>
+                      </div>
+                    </div>
+                    <!-- <button class="addBtn">+</button>
                     <input type="number" class="numTxt" />
-                    <button class="delBtn">-</button>
+                    <button class="delBtn">-</button> -->
                   </div>
                 </div>
               </div>
@@ -495,7 +504,7 @@
   <!-- Portfolio item 2 modal popup-->
   <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" style="width: 50%; margin: 10px auto">
-      <div class="modal-content">
+      <div class="modal-content ">
         <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
         <div class="container">
           <div class="row justify-content-center">
