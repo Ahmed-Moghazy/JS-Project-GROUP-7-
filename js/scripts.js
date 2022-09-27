@@ -38,9 +38,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Collapse responsive navbar when toggler is visible
   const navbarToggler = document.body.querySelector(".navbar-toggler");
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll("#navbarResponsive .nav-link")
-  );
+  const responsiveNavItems = [].slice.call(document.querySelectorAll("#navbarResponsive .nav-link"));
   responsiveNavItems.map(function (responsiveNavItem) {
     responsiveNavItem.addEventListener("click", () => {
       if (window.getComputedStyle(navbarToggler).display !== "none") {
@@ -65,21 +63,26 @@ document.onscroll = function () {
 // modal add cart
 let confirmBtn = document.getElementsByClassName("confirm-btn");
 let addCart = document.querySelectorAll(".addCart");
+let conBtn = document.querySelectorAll(".con-btn");
+let counterTxt = document.querySelectorAll(".numTxt");
 // console.log(addCart.length);
 if (confirmBtn) {
   for (let i = 0; i < confirmBtn.length; i++) {
     confirmBtn[i].addEventListener("click", function (e) {
       e.target.style.display = "none";
       addCart[i].style.display = "flex";
+      conBtn[i].style.display = "flex";
+      counterTxt[i].value = 1;
     });
   }
 }
 
 let addBtn = document.querySelectorAll(".addBtn");
 let deleteBtn = document.querySelectorAll(".delBtn");
-let counterTxt = document.querySelectorAll(".numTxt");
+
 let alertTxt = document.querySelector(".message-added");
 let alertTxtD = document.querySelector(".message-deleted");
+
 if (addBtn) {
   for (let i = 0; i < addBtn.length; i++) {
     addBtn[i].addEventListener("click", function () {
@@ -91,6 +94,8 @@ if (addBtn) {
       }, 2000);
     });
   }
+
+  //
 }
 
 if (deleteBtn) {
@@ -124,12 +129,7 @@ if (localStorage.getItem("UserInfo")) {
 if (submit) {
   submit.addEventListener("click", (e) => {
     // e.preventDefault();
-    if (
-      (fullName.value !== "") &
-      (email.value !== "") &
-      (confirmPassword.value !== "") &
-      (password.value !== "")
-    ) {
+    if ((fullName.value !== "") & (email.value !== "") & (confirmPassword.value !== "") & (password.value !== "")) {
       if (password.value == confirmPassword.value) {
         if (
           signupArray.some((v) => {
@@ -236,294 +236,132 @@ window.onload = function () {
   }
   // Get Cart From Local To Cart Page
   let cartPage = document.querySelector(".cartdata");
-  let cartDivOne = localStorage.getItem("cart1");
-  let cartDivTwo = localStorage.getItem("cart2");
-  let cartDivThree = localStorage.getItem("cart3");
-  let cartDivFour = localStorage.getItem("cart4");
-  let cartDivFive = localStorage.getItem("cart5");
-  let cartDivSix = localStorage.getItem("cart6");
+  let cartDataLS = window.localStorage.getItem("cart");
   if (cartPage) {
-    cartPage.insertAdjacentHTML("beforeend", cartDivOne);
-    cartPage.insertAdjacentHTML("beforeend", cartDivTwo);
-    cartPage.insertAdjacentHTML("beforeend", cartDivThree);
-    cartPage.insertAdjacentHTML("beforeend", cartDivFour);
-    cartPage.insertAdjacentHTML("beforeend", cartDivFive);
-    cartPage.insertAdjacentHTML("beforeend", cartDivSix);
+    let cartDataArr = JSON.parse(cartDataLS);
+    for (let i = 0; i < cartDataArr.length; i++) {
+      cartPage.insertAdjacentHTML("beforeend", cartDataArr[i]);
+    }
   }
-};
 
-// If user Log out change the value of login in local storage to false
-let logoutBtn = document.querySelector("#loginBtn");
-if (logoutBtn) {
-  logoutBtn.addEventListener("click", function () {
-    let logoutLS = window.localStorage.getItem("UserInfo");
-    if (logoutLS) {
-      let logoutJResult = JSON.parse(logoutLS);
-      for (let i = 0; i < logoutJResult.length; i++) {
-        if (logoutJResult[i].login == true) {
-          activeLogout(logoutJResult[i].id);
+  // If user Log out change the value of login in local storage to false
+  let logoutBtn = document.querySelector("#loginBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      let logoutLS = window.localStorage.getItem("UserInfo");
+      if (logoutLS) {
+        let logoutJResult = JSON.parse(logoutLS);
+        for (let i = 0; i < logoutJResult.length; i++) {
+          if (logoutJResult[i].login == true) {
+            activeLogout(logoutJResult[i].id);
+          }
+        }
+        window.location.assign("/JS-Project-GROUP-7-/pages/login.html");
+      }
+    });
+    function activeLogout(userId) {
+      for (let i = 0; i < signupArray.length; i++) {
+        if (signupArray[i].id == userId) {
+          signupArray[i].login = false;
         }
       }
-      window.location.assign("/JS-Project-GROUP-7-/pages/login.html");
+      addSignupDataToLS(signupArray);
     }
-  });
-  function activeLogout(userId) {
-    for (let i = 0; i < signupArray.length; i++) {
-      if (signupArray[i].id == userId) {
-        signupArray[i].login = false;
-      }
-    }
-    addSignupDataToLS(signupArray);
   }
-}
-//==================================================End Log In Page===========================================
-//==================================================Start Cart Page===========================================
-// let addToCartOne = document.querySelector(".add-to-cart-one");
-// let carttextOne = document.querySelector(".cart-text-one");
-// let addToCartTwo = document.querySelector(".add-to-cart-two");
-// let carttextTwo = document.querySelector(".cart-text-two");
-// let addToCartThree = document.querySelector(".add-to-cart-three");
-// let carttextThree = document.querySelector(".cart-text-three");
-// let addToCartFour = document.querySelector(".add-to-cart-four");
-// let carttextFour = document.querySelector(".cart-text-four");
-// let addToCartFive = document.querySelector(".add-to-cart-five");
-// let carttextFive = document.querySelector(".cart-text-five");
-// let addToCartSix = document.querySelector(".add-to-cart-six");
-// let carttextSix = document.querySelector(".cart-text-six");
-// // let cartArray = [];
+  //==================================================End Log In Page===========================================
+  //==================================================Start Cart Page===========================================
+  //   let addToCart = document.querySelectorAll(".add-to-cart");
+  let cartHeader = document.querySelectorAll(".cart-title");
+  let cartInfo = document.querySelectorAll(".cart-info");
+  let cartImg = document.querySelectorAll(".cart-img");
+  let cartPrice = document.querySelectorAll(".cart-price");
+  let counterArr = [];
+  //   let cartArray = [];
+  if (localStorage.getItem("cart")) {
+    counterArr = JSON.parse(localStorage.getItem("cart"));
+  }
+  //   if (addToCart) {
+  //     for (let i = 0; i < addToCart.length; i++) {
+  //       addToCart[i].addEventListener("click", function () {
+  //         let cartData = ` <div class="card mb-4">
+  //   <div class="card-body">
+  //   <div class="d-flex gap-3 justify-content-between">
+  //           <div class="d-flex flex-row align-items-center">
+  //             <div>
+  //               <img
+  //                 src="${cartImg[i].src}"
+  //                 class="img-fluid rounded-3"
+  //                 alt="Shopping item"
+  //                 style="width: 110px"
+  //               />
+  //             </div>
+  //             <div class="ms-3">
+  //               <h5>${cartHeader[i].innerHTML}</h5>
+  //               <p class="small mb-0">${cartInfo[i].innerHTML}</p>
+  //             </div>
+  //           </div>
+  //           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
+  //             <div class="d-flex gap-1">
+  //               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
 
-// if (addToCartOne) {
-//   addToCartOne.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//     <div class="card-body">
-//       <div class="d-flex gap-3 justify-content-between">
-//         <div class="d-flex flex-row align-items-center">
-//           <div>
-//             <img
-//               src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//               class="img-fluid rounded-3"
-//               alt="Shopping item"
-//               style="width: 110px"
-//             />
-//           </div>
-//           <div class="ms-3">
-//             <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//             <p class="small mb-0">512GB, Phantom Black</p>
-//           </div>
-//         </div>
-//         <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//           <div class="d-flex gap-1">
-//             <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-    
-//             <input class="input-group border border-none" style="width: 30px" value = ${carttextOne.value} />
-    
-//             <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//           </div>
-//           <div>
-//             <h5 class="fw-normal mb-0">$900</h5>
-//           </div>
-//           <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//         </div>
-//       </div>
-//     </div>
-//     </div>`;
-//     localStorage.setItem("cart1", cartData);
-//   });
-// }
-// if (addToCartTwo) {
-//   addToCartTwo.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//       <div class="card-body">
-//         <div class="d-flex gap-3 justify-content-between">
-//           <div class="d-flex flex-row align-items-center">
-//             <div>
-//               <img
-//                 src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//                 class="img-fluid rounded-3"
-//                 alt="Shopping item"
-//                 style="width: 110px"
-//               />
-//             </div>
-//             <div class="ms-3">
-//               <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//               <p class="small mb-0">512GB, Phantom Black</p>
-//             </div>
-//           </div>
-//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//             <div class="d-flex gap-1">
-//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-      
-//               <input class="input-group border border-none" style="width: 30px" value = ${carttextTwo.value} />
-      
-//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//             </div>
-//             <div>
-//               <h5 class="fw-normal mb-0">$900</h5>
-//             </div>
-//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//           </div>
-//         </div>
-//       </div>
-//       </div>`;
-//     localStorage.setItem("cart2", cartData);
-//   });
-// }
-// if (addToCartThree) {
-//   addToCartThree.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//       <div class="card-body">
-//         <div class="d-flex gap-3 justify-content-between">
-//           <div class="d-flex flex-row align-items-center">
-//             <div>
-//               <img
-//                 src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//                 class="img-fluid rounded-3"
-//                 alt="Shopping item"
-//                 style="width: 110px"
-//               />
-//             </div>
-//             <div class="ms-3">
-//               <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//               <p class="small mb-0">512GB, Phantom Black</p>
-//             </div>
-//           </div>
-//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//             <div class="d-flex gap-1">
-//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-      
-//               <input class="input-group border border-none" style="width: 30px" value = ${carttextThree.value} />
-      
-//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//             </div>
-//             <div>
-//               <h5 class="fw-normal mb-0">$900</h5>
-//             </div>
-//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//           </div>
-//         </div>
-//       </div>
-//       </div>`;
-//     localStorage.setItem("cart3", cartData);
-//   });
-// }
-// if (addToCartFour) {
-//   addToCartFour.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//       <div class="card-body">
-//         <div class="d-flex gap-3 justify-content-between">
-//           <div class="d-flex flex-row align-items-center">
-//             <div>
-//               <img
-//                 src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//                 class="img-fluid rounded-3"
-//                 alt="Shopping item"
-//                 style="width: 110px"
-//               />
-//             </div>
-//             <div class="ms-3">
-//               <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//               <p class="small mb-0">512GB, Phantom Black</p>
-//             </div>
-//           </div>
-//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//             <div class="d-flex gap-1">
-//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-      
-//               <input class="input-group border border-none" style="width: 30px" value = ${carttextFour.value} />
-      
-//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//             </div>
-//             <div>
-//               <h5 class="fw-normal mb-0">$900</h5>
-//             </div>
-//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//           </div>
-//         </div>
-//       </div>
-//       </div>`;
-//     localStorage.setItem("cart4", cartData);
-//   });
-// }
-// if (addToCartFive) {
-//   addToCartFive.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//       <div class="card-body">
-//         <div class="d-flex gap-3 justify-content-between">
-//           <div class="d-flex flex-row align-items-center">
-//             <div>
-//               <img
-//                 src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//                 class="img-fluid rounded-3"
-//                 alt="Shopping item"
-//                 style="width: 110px"
-//               />
-//             </div>
-//             <div class="ms-3">
-//               <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//               <p class="small mb-0">512GB, Phantom Black</p>
-//             </div>
-//           </div>
-//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//             <div class="d-flex gap-1">
-//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-      
-//               <input class="input-group border border-none" style="width: 30px" value = ${carttextFive.value} />
-      
-//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//             </div>
-//             <div>
-//               <h5 class="fw-normal mb-0">$900</h5>
-//             </div>
-//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//           </div>
-//         </div>
-//       </div>
-//       </div>`;
-//     localStorage.setItem("cart5", cartData);
-//   });
-// }
-// if (addToCartSix) {
-//   addToCartSix.addEventListener("click", function () {
-//     let cartData = ` <div class="card mb-4">
-//       <div class="card-body">
-//         <div class="d-flex gap-3 justify-content-between">
-//           <div class="d-flex flex-row align-items-center">
-//             <div>
-//               <img
-//                 src="https://m.media-amazon.com/images/I/61U6oC65TTL._AC_SX466_.jpg"
-//                 class="img-fluid rounded-3"
-//                 alt="Shopping item"
-//                 style="width: 110px"
-//               />
-//             </div>
-//             <div class="ms-3">
-//               <h5>Samsung Galaxy S22 Ultra Dual SIM</h5>
-//               <p class="small mb-0">512GB, Phantom Black</p>
-//             </div>
-//           </div>
-//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-//             <div class="d-flex gap-1">
-//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
-      
-//               <input class="input-group border border-none" style="width: 30px" value = ${carttextSix.value} />
-      
-//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-//             </div>
-//             <div>
-//               <h5 class="fw-normal mb-0">$900</h5>
-//             </div>
-//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-//           </div>
-//         </div>
-//       </div>
-//       </div>`;
-//     localStorage.setItem("cart6", cartData);
-//   });
-// }
+  //               <input class="input-group border border-none cont" style="width: 30px" value = "" />
 
-//
-// window.onload = function () {
-//
-// };
-
+  //               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+  //             </div>
+  //             <div>
+  //               <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
+  //             </div>
+  //             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       </div>`;
+  //         cartArray.push(cartData);
+  //         // console.log(cartArray);
+  //         window.localStorage.setItem("cart", JSON.stringify(cartArray));
+  //       });
+  //     }
+  //   }
+  if (conBtn) {
+    for (let i = 0; i < conBtn.length; i++) {
+      conBtn[i].addEventListener("click", function () {
+        let cartData = ` <div class="card mb-4">
+        <div class="card-body">
+        <div class="d-flex gap-3 justify-content-between">
+                <div class="d-flex flex-row align-items-center">
+                  <div>
+                    <img
+                      src="${cartImg[i].src}"
+                      class="img-fluid rounded-3"
+                      alt="Shopping item"
+                      style="width: 110px"
+                    />
+                  </div>
+                  <div class="ms-3">
+                    <h5>${cartHeader[i].innerHTML}</h5>
+                    <p class="small mb-0">${cartInfo[i].innerHTML}</p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center justify-content-between gap-2">
+                  <div class="d-flex gap-1">
+                    <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+            
+                    <input class="input-group border border-none cont" style="width: 30px" value = "${counterTxt[i].value}" />
+            
+                    <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+                  </div>
+                  <div>
+                    <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
+                  </div>
+                  <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+                </div>
+              </div>
+            </div>
+            </div>`;
+        counterArr.push(cartData);
+        window.localStorage.setItem("cart", JSON.stringify(counterArr));
+      });
+    }
+  }
+};
 //==================================================End Cart Page===========================================

@@ -12209,6 +12209,9 @@ input::-webkit-inner-spin-button {
 .item:hover img {
   transform: rotate(5deg) scale(1.1);
 }
+.con-btn {
+  display: none;
+}
 @keyframes flashing {
   0%,
   40% {
@@ -12232,4 +12235,3 @@ input::-webkit-inner-spin-button {
   top: 100px;
   right: 50px;
 }
-
