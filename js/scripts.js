@@ -38,7 +38,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   // Collapse responsive navbar when toggler is visible
   const navbarToggler = document.body.querySelector(".navbar-toggler");
-  const responsiveNavItems = [].slice.call(document.querySelectorAll("#navbarResponsive .nav-link"));
+  const responsiveNavItems = [].slice.call(
+    document.querySelectorAll("#navbarResponsive .nav-link")
+  );
   responsiveNavItems.map(function (responsiveNavItem) {
     responsiveNavItem.addEventListener("click", () => {
       if (window.getComputedStyle(navbarToggler).display !== "none") {
@@ -129,7 +131,12 @@ if (localStorage.getItem("UserInfo")) {
 if (submit) {
   submit.addEventListener("click", (e) => {
     // e.preventDefault();
-    if ((fullName.value !== "") & (email.value !== "") & (confirmPassword.value !== "") & (password.value !== "")) {
+    if (
+      (fullName.value !== "") &
+      (email.value !== "") &
+      (confirmPassword.value !== "") &
+      (password.value !== "")
+    ) {
       if (password.value == confirmPassword.value) {
         if (
           signupArray.some((v) => {
@@ -200,7 +207,10 @@ function checkUserDataInLS() {
   if (data) {
     let loginData = JSON.parse(data);
     for (let i = 0; i < loginData.length; i++) {
-      if ((loginData[i].email == loginEmail.value) & (loginData[i].password == loginPassword.value)) {
+      if (
+        (loginData[i].email == loginEmail.value) &
+        (loginData[i].password == loginPassword.value)
+      ) {
         activeLogin(loginData[i].id);
 
         return true;
@@ -212,7 +222,9 @@ function checkUserDataInLS() {
 function activeLogin(userId) {
   for (let i = 0; i < signupArray.length; i++) {
     if (signupArray[i].id == userId) {
-      signupArray[i].login == false ? (signupArray[i].login = true) : (signupArray[i].login = false);
+      signupArray[i].login == false
+        ? (signupArray[i].login = true)
+        : (signupArray[i].login = false);
     }
   }
   addSignupDataToLS(signupArray);
@@ -268,64 +280,65 @@ window.onload = function () {
       addSignupDataToLS(signupArray);
     }
   }
-  //==================================================End Log In Page===========================================
-  //==================================================Start Cart Page===========================================
-  //   let addToCart = document.querySelectorAll(".add-to-cart");
-  let cartHeader = document.querySelectorAll(".cart-title");
-  let cartInfo = document.querySelectorAll(".cart-info");
-  let cartImg = document.querySelectorAll(".cart-img");
-  let cartPrice = document.querySelectorAll(".cart-price");
-  let counterArr = [];
-  //   let cartArray = [];
-  if (localStorage.getItem("cart")) {
-    counterArr = JSON.parse(localStorage.getItem("cart"));
-  }
-  //   if (addToCart) {
-  //     for (let i = 0; i < addToCart.length; i++) {
-  //       addToCart[i].addEventListener("click", function () {
-  //         let cartData = ` <div class="card mb-4">
-  //   <div class="card-body">
-  //   <div class="d-flex gap-3 justify-content-between">
-  //           <div class="d-flex flex-row align-items-center">
-  //             <div>
-  //               <img
-  //                 src="${cartImg[i].src}"
-  //                 class="img-fluid rounded-3"
-  //                 alt="Shopping item"
-  //                 style="width: 110px"
-  //               />
-  //             </div>
-  //             <div class="ms-3">
-  //               <h5>${cartHeader[i].innerHTML}</h5>
-  //               <p class="small mb-0">${cartInfo[i].innerHTML}</p>
-  //             </div>
-  //           </div>
-  //           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-  //             <div class="d-flex gap-1">
-  //               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+};
+//==================================================End Log In Page===========================================
+//==================================================Start Cart Page===========================================
+//   let addToCart = document.querySelectorAll(".add-to-cart");
+let cartHeader = document.querySelectorAll(".cart-title");
+let cartInfo = document.querySelectorAll(".cart-info");
+let cartImg = document.querySelectorAll(".cart-img");
+let cartPrice = document.querySelectorAll(".cart-price");
+let counterArr = [];
+//   let cartArray = [];
+if (localStorage.getItem("cart")) {
+  counterArr = JSON.parse(localStorage.getItem("cart"));
+}
+//   if (addToCart) {
+//     for (let i = 0; i < addToCart.length; i++) {
+//       addToCart[i].addEventListener("click", function () {
+//         let cartData = ` <div class="card mb-4">
+//   <div class="card-body">
+//   <div class="d-flex gap-3 justify-content-between">
+//           <div class="d-flex flex-row align-items-center">
+//             <div>
+//               <img
+//                 src="${cartImg[i].src}"
+//                 class="img-fluid rounded-3"
+//                 alt="Shopping item"
+//                 style="width: 110px"
+//               />
+//             </div>
+//             <div class="ms-3">
+//               <h5>${cartHeader[i].innerHTML}</h5>
+//               <p class="small mb-0">${cartInfo[i].innerHTML}</p>
+//             </div>
+//           </div>
+//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
+//             <div class="d-flex gap-1">
+//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
 
-  //               <input class="input-group border border-none cont" style="width: 30px" value = "" />
+//               <input class="input-group border border-none cont" style="width: 30px" value = "" />
 
-  //               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-  //             </div>
-  //             <div>
-  //               <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
-  //             </div>
-  //             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       </div>`;
-  //         cartArray.push(cartData);
-  //         // console.log(cartArray);
-  //         window.localStorage.setItem("cart", JSON.stringify(cartArray));
-  //       });
-  //     }
-  //   }
-  if (conBtn) {
-    for (let i = 0; i < conBtn.length; i++) {
-      conBtn[i].addEventListener("click", function () {
-        let cartData = ` <div class="card mb-4">
+//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+//             </div>
+//             <div>
+//               <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
+//             </div>
+//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+//           </div>
+//         </div>
+//       </div>
+//       </div>`;
+//         cartArray.push(cartData);
+//         // console.log(cartArray);
+//         window.localStorage.setItem("cart", JSON.stringify(cartArray));
+//       });
+//     }
+//   }
+if (conBtn) {
+  for (let i = 0; i < conBtn.length; i++) {
+    conBtn[i].addEventListener("click", function () {
+      let cartData = ` <div class="card mb-4">
         <div class="card-body">
         <div class="d-flex gap-3 justify-content-between">
                 <div class="d-flex flex-row align-items-center">
@@ -358,10 +371,144 @@ window.onload = function () {
               </div>
             </div>
             </div>`;
-        counterArr.push(cartData);
-        window.localStorage.setItem("cart", JSON.stringify(counterArr));
-      });
-    }
+      counterArr.push(cartData);
+      window.localStorage.setItem("cart", JSON.stringify(counterArr));
+    });
   }
-};
+}
+
 //==================================================End Cart Page===========================================
+//==================================================Erini: Cart Page Price calculations=====================
+
+// Declaring elements
+let cartCard = document.getElementsByClassName("cartCard");
+let plusBtns = document.getElementsByClassName("plusBtn");
+let minusBtns = document.getElementsByClassName("minusBtn");
+let quantity = document.getElementsByClassName("quantity");
+let price = document.getElementsByClassName("priceTxt");
+let trashBtns = document.getElementsByClassName("trashBin");
+let itemsNum = document.getElementById("itemsNum");
+let shippingfee = document.getElementById("shippingFee");
+let total = document.getElementsByClassName("total");
+let subtotal = document.getElementById("subtotal");
+let subTotal = 0;
+
+//Mapping number of items on load to "You have # items in your cart"
+itemsNum.innerText = trashBtns.length;
+
+// <-----------------------Functions----------------------->
+
+// Function to split currency and amount of product price
+let splitPrice = function (string) {
+  let amount = string.match(/[0-9]+([,.][0-9]+)?/);
+  let unit = string.replace(/[0-9]+([,.][0-9]+)?/, "");
+  if (amount && unit) {
+    return {
+      amount: +amount[0].replace(",", "."),
+      currency: unit,
+    };
+  }
+  return {
+    amount: +amount[0].replace(",", "."),
+  };
+};
+
+// Function to retrieve initial subtotal price of cart items
+function getInitialSubTotal() {
+  for (let i = 0; i < trashBtns.length; i++) {
+    const priceofOne = splitPrice(price[i].innerText).amount;
+    subTotal += priceofOne;
+    subtotal.innerText = `$${subTotal}`;
+  }
+}
+
+getInitialSubTotal();
+
+// Removing item when clicking on trashbin (delete)
+for (let i = 0; i < trashBtns.length; i++) {
+  if (trashBtns[i]) {
+    trashBtns[i].addEventListener("click", function (event) {
+      console.log(cartCard);
+      console.log(quantity.length);
+      event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
+      // cartCard[i].remove();
+      console.log(cartCard);
+      console.log(quantity.length);
+      // Updating subtotal when an item is removed
+      let button = event.currentTarget;
+      let removedPrice = splitPrice(
+        button.previousElementSibling.innerText
+      ).amount;
+      subTotal -= removedPrice;
+      subtotal.innerText = `$${subTotal}`;
+      getTotalOfPurchase();
+      //Updating title of "You have # items in your cart"
+      itemsNum.innerText = trashBtns.length;
+    });
+  }
+}
+// Updating item price based on quantity input change (on change)
+for (let i = 0; i < quantity.length; i++) {
+  const priceofOne = splitPrice(price[i].innerText).amount;
+  if (quantity[i]) {
+    quantity[i].addEventListener("change", function () {
+      if (quantity[i].value <= 10) {
+        let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
+        console.log(itemsPrice);
+        price[i].innerText = `$${itemsPrice}`;
+        subTotal = 0;
+        getInitialSubTotal();
+        getTotalOfPurchase();
+      }
+    });
+  }
+}
+
+// Updating item price based on quantity input change (using plus button)
+for (let i = 0; i < plusBtns.length; i++) {
+  const priceofOne = splitPrice(price[i].innerText).amount;
+  if (plusBtns[i]) {
+    plusBtns[i].addEventListener("click", function (event) {
+      if (quantity[i].value < 10) {
+        quantity[i].value++;
+        let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
+        price[i].innerText = `$${itemsPrice}`;
+        subTotal += Number(priceofOne);
+        subtotal.innerText = `$${subTotal}`;
+        getTotalOfPurchase();
+      }
+    });
+  }
+}
+
+// Updating item price based on quantity input change (using minus button)
+for (let i = 0; i < minusBtns.length; i++) {
+  const priceofOne = splitPrice(price[i].innerText).amount;
+  if (minusBtns[i]) {
+    minusBtns[i].addEventListener("click", function () {
+      if (quantity[i].value > 1) {
+        quantity[i].value--;
+        let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
+        price[i].innerText = `$${itemsPrice}`;
+        subTotal -= Number(priceofOne);
+        subtotal.innerText = `$${subTotal}`;
+        getTotalOfPurchase();
+      }
+    });
+  }
+}
+
+// Retrieving shipping fee
+let shippingFee = splitPrice(shippingfee.innerText).amount;
+shippingfee.innerText = `$${shippingFee}`;
+
+// Calculating total price of purchases
+
+function getTotalOfPurchase() {
+  for (let i = 0; i < total.length; i++) {
+    let totalPrice = `${subTotal + shippingFee}`;
+    total[i].innerText = `$${totalPrice}`;
+  }
+}
+
+getTotalOfPurchase();
