@@ -50,7 +50,7 @@
       </div>
     </header>
     <div> -->
-      <!--  SHOPPING CART BY ERINI  -->
+      <!--  SHOPPING CART  -->
       <section class="h-100 h-custom" style="background-color: #eee">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
@@ -61,8 +61,8 @@
                     <div class="col-lg-7 cartdata">
                       
                       <h5 class="mb-3">
-                        <a href="#!" class="text-body" style="text-decoration: none"
-                          ><i class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a
+                        <a href="../index.html" class="text-body" style="text-decoration: none"
+                          ><i class="fas fa-long-arrow-alt-left me-2"></i>CONTINUE SHOPPING</a
                         >
                       </h5>
                       <hr />
@@ -72,7 +72,7 @@
                           <p class="mb-1" style="color: #006e7f">
                             <b>Shopping cart</b>
                           </p>
-                          <p class="mb-0">You have 4 items in your cart</p>
+                          <p class="mb-0">You have <span id="itemsNum">4</span> items in your cart</p>
                         </div>
                         <div>
                           <p class="mb-0 pe-3">
@@ -84,7 +84,7 @@
                         </div>
                       </div>
 
-                      <div class="card mb-4">
+                      <div class="cartCard card mb-4 ">
                         <div class="card-body">
                           <div class="d-flex gap-3 justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -103,22 +103,23 @@
                             </div>
                             <div class="d-flex flex-row align-items-center justify-content-between gap-2">
                               <div class="d-flex gap-1">
-                                <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+                                <button class="minusBtn text-decoration-none btn-dark rounded-start border" href="#" style="width: 22px; text-align: center">-</button>
 
-                                <input class="input-group border border-none " style="width: 30px" />
+                                <input class="quantity border border-none" style="width: 30px; text-align:center" type="number" value="1" />
 
-                                <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+                                <button class="plusBtn text-decoration-none btn-dark rounded-end border" style="width: 22px; text-align: center" href="#">+</button>
                               </div>
                               <div>
-                                <h5 class="fw-normal mb-0">$900</h5>
+                                <h5 class="priceTxt fw-normal mb-0">$100</h5>
                               </div>
-                              <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+                              
+                              <a class="trashBin" ><img class="fas fa-trash-alt" style="color:rgb(190, 15, 15); cursor:pointer"></a>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div class="card mb-4">
+                      <div class="cartCard card mb-4 ">
                         <div class="card-body">
                           <div class="d-flex gap-3 justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -137,22 +138,23 @@
                             </div>
                             <div class="d-flex flex-row align-items-center justify-content-between gap-2">
                               <div class="d-flex gap-1">
-                                <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+                                <button class="minusBtn text-decoration-none btn-dark rounded-start border" href="#" style="width: 22px; text-align: center">-</button>
 
-                                <input class="input-group border border-none" style="width: 30px" />
+                                <input class="quantity border border-none" style="width: 30px; text-align:center" type="number" value="1" />
 
-                                <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+                                <button class="plusBtn text-decoration-none btn-dark rounded-end border" style="width: 22px; text-align: center" href="#">+</button>
                               </div>
                               <div>
-                                <h5 class="fw-normal mb-0">$900</h5>
+                                <h5 class="priceTxt fw-normal mb-0">$200</h5>
                               </div>
-                              <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+                              
+                              <a class="trashBin" ><img class="fas fa-trash-alt" style="color:rgb(190, 15, 15); cursor:pointer"></a>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div class="card mb-4">
+                      <div class="cartCard card mb-4">
                         <div class="card-body">
                           <div class="d-flex gap-3 justify-content-between">
                             <div class="d-flex flex-row align-items-center">
@@ -171,22 +173,25 @@
                             </div>
                             <div class="d-flex flex-row align-items-center justify-content-between gap-2">
                               <div class="d-flex gap-1">
-                                <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+                                <button class="minusBtn text-decoration-none btn-dark rounded-start border" href="#" style="width: 22px; text-align: center">-</button>
 
-                                <input class="input-group border border-none" style="width: 30px" />
+                                <input class="quantity border border-none" style="width: 30px; text-align:center" type="number" value="1" />
 
-                                <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+                                <button class="plusBtn text-decoration-none btn-dark rounded-end border" style="width: 22px; text-align: center" href="#">+</button>
                               </div>
                               <div>
-                                <h5 class="fw-normal mb-0">$900</h5>
+                                <h5 class="priceTxt fw-normal mb-0">$300</h5>
                               </div>
-                              <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+                              
+                              <a class="trashBin" ><img class="fas fa-trash-alt" style="color:rgb(190, 15, 15); cursor:pointer"></a>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!--  CARD DETAILS BY MOGHAZY  -->
+
+
+                <!--  CARD DETAILS   -->
                     <div class="col-lg-5">
                       <div class="card text-white" style="border: none">
                         <div class="card-body" style="background-color: #212529; border-radius: 20px">
@@ -234,9 +239,11 @@
                                   />
                                 </div>
                               </div>
+
+                              <div class="row mb-4"></div>
                               <div class="col-md-6">
                                 <div class="form-outline form-white">
-                                  <label class="form-label" for="typeText">Cvv</label>
+                                  <label class="form-label" for="typeText">CVV</label>
                                   <input
                                     type="password"
                                     id="typeText"
@@ -249,30 +256,32 @@
                                 </div>
                               </div>
                             </div>
+                          
                           </form>
 
                           <hr class="my-4" />
 
                           <div class="d-flex justify-content-between">
                             <p class="mb-2">Subtotal</p>
-                            <p class="mb-2">$4798.00</p>
+                            <p class="mb-2" id="subtotal">$4798.00</p>
                           </div>
 
                           <div class="d-flex justify-content-between">
                             <p class="mb-2">Shipping</p>
-                            <p class="mb-2">$20.00</p>
+                            <p class=" shippingFee mb-2" id="shippingFee">$20.00</p>
                           </div>
 
                           <div class="d-flex justify-content-between mb-4">
-                            <p class="mb-2">Total(Incl. taxes)</p>
-                            <p class="mb-2">$4818.00</p>
+                            <p class="mb-2">Total (Including taxes)</p>
+                            <p class="total mb-2" id="total">$4818.00</p>
                           </div>
                           <div class="d-grid">
-                            <button type="button" class="btn btn-block btn-lg" style="background-color: #ffc800">
+                           <a href="../pages/checkout.html" style="text-decoration: none;" > <button type="button" class="btn btn-block btn-lg"  disabled style="background-color: #ffc800">
                               <div class="d-flex justify-content-between" style="color: #fff; font-weight: 900">
-                                <span>$4818.00</span>
+                                <span class="total">$4818.00</span>
                                 <span> Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                               </div>
+                            </a>
                             </button>
                           </div>
                         </div>
