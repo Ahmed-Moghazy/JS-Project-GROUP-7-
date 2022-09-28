@@ -128,7 +128,7 @@ if (localStorage.getItem("UserInfo")) {
 // Submit Event
 if (submit) {
   submit.addEventListener("click", (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if ((fullName.value !== "") & (email.value !== "") & (confirmPassword.value !== "") & (password.value !== "")) {
       if (password.value == confirmPassword.value) {
         if (
@@ -143,7 +143,7 @@ if (submit) {
           email.value = "";
           password.value = "";
           confirmPassword.value = "";
-          window.location.assign("/JS-Project-GROUP-7-/pages/login.html");
+          window.location.assign("../pages/login.html");
         }
       } else {
         confirmPassword.value = "";
@@ -186,7 +186,7 @@ if (loginSubmit) {
     if (loginEmail.value !== "" && loginPassword.value !== "") {
       let result = checkUserDataInLS();
       if (result == true) {
-        window.location.assign("/JS-Project-GROUP-7-/index.html");
+        window.location.assign("../index.html");
       } else {
         console.log("envalid email or password");
       }
@@ -234,6 +234,7 @@ window.onload = function () {
       }
     }
   }
+
   // Get Cart From Local To Cart Page
   let cartPage = document.querySelector(".cartdata");
   let cartDataLS = window.localStorage.getItem("cart");
@@ -256,7 +257,7 @@ window.onload = function () {
             activeLogout(logoutJResult[i].id);
           }
         }
-        window.location.assign("/JS-Project-GROUP-7-/pages/login.html");
+        window.location.assign("../pages/login.html");
       }
     });
     function activeLogout(userId) {
@@ -268,6 +269,55 @@ window.onload = function () {
       addSignupDataToLS(signupArray);
     }
   }
+
+  //sending products in cart to checkout by MOGHAZY
+
+let productName = document.querySelectorAll(".product-name"); 
+productName.className= "product-name";
+let productPrice = document.querySelectorAll(".product-price");
+let totalPrice = document.querySelector(".total-price");
+let productCount = document.querySelectorAll(".product-count");
+let checkoutBtn = document.querySelector(".checkout-btn");
+let productContainer = document.querySelectorAll(".product-container");
+let productArray = [];
+if(localStorage.getItem("product")){
+  productArray = JSON.parse(localStorage.getItem("product"));
+}
+
+if(checkoutBtn){
+    for (let i = 0; i < productContainer.length; i++) {
+      let productBody = 
+      `<tr>
+      <th scope="row">${i}</th>
+      <td>${productName[i].innerHTML}</td>
+      <td>${productPrice[i].innerHTML}</td>
+      <td>${productCount[i].value}</td>
+      <td>${totalPrice.innerHTML}</td>
+      </tr>`;
+      checkoutBtn.addEventListener("click", function(){
+      productArray.push(productBody);
+      window.localStorage.setItem("product", JSON.stringify(productArray));
+    });  
+  }
+}
+
+  // checkout page code by moghazy
+
+  let productInfo = document.querySelector(".prdouct-info");
+  let productLS = window.localStorage.getItem("product");
+  if(productInfo){
+    let productLSData = JSON.parse(productLS);
+    console.log(productLSData);
+   for (let i = 0; i < productLSData.length; i++) {
+    productInfo.insertAdjacentHTML("beforeend", productLSData[i]);  
+    } 
+  }
+
+  
+
+
+
+};
   //==================================================End Log In Page===========================================
   //==================================================Start Cart Page===========================================
   //   let addToCart = document.querySelectorAll(".add-to-cart");
@@ -325,7 +375,7 @@ window.onload = function () {
   if (conBtn) {
     for (let i = 0; i < conBtn.length; i++) {
       conBtn[i].addEventListener("click", function () {
-        let cartData = ` <div class="card mb-4">
+        let cartData = ` <div class="card mb-4 product-container">
         <div class="card-body">
         <div class="d-flex gap-3 justify-content-between">
                 <div class="d-flex flex-row align-items-center">
@@ -338,7 +388,7 @@ window.onload = function () {
                     />
                   </div>
                   <div class="ms-3">
-                    <h5>${cartHeader[i].innerHTML}</h5>
+                    <h5 class="product-name">${cartHeader[i].innerHTML}</h5>
                     <p class="small mb-0">${cartInfo[i].innerHTML}</p>
                   </div>
                 </div>
@@ -346,12 +396,12 @@ window.onload = function () {
                   <div class="d-flex gap-1">
                     <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
             
-                    <input class="input-group border border-none cont" style="width: 30px" value = "${counterTxt[i].value}" />
+                    <input class="input-group border border-none cont product-count" style="width: 30px" value = "${counterTxt[i].value}" />
             
                     <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
                   </div>
                   <div>
-                    <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
+                    <h5 class="fw-normal mb-0 product-price">${cartPrice[i].innerHTML}</h5>
                   </div>
                   <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
                 </div>
@@ -363,5 +413,11 @@ window.onload = function () {
       });
     }
   }
-};
+
+// sending products added top cart into checkout page by moghazy
+
+
+
+
+
 //==================================================End Cart Page===========================================
