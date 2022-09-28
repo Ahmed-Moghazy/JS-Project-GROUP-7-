@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -18,61 +17,68 @@
     <link href="../css/styles.css" rel="stylesheet" />
 
     <style>
-        .checkout {
-            margin-top: 100px;
-        }
+      .checkout {
+        margin-top: 100px;
+      }
 
-        .contact {
-            margin-top: 100px;
-            border-radius: 30px;
-        }
+      .contact {
+        margin-top: 100px;
+        border-radius: 30px;
+      }
 
-        label {
-            color: white;
-        }
+      label {
+        color: white;
+      }
 
-        th,
-        td {
-            /* padding: 15px; */
-            text-align: center;
-        }
+      th,
+      td {
+        /* padding: 15px; */
+        text-align: center;
+      }
 
-        table {
-            margin-top: 40px
-        }
+      table {
+        margin-top: 40px;
+      }
 
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
 
-        /* Firefox */
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
     </style>
-</head>
+  </head>
 
-<body id="page-top">
+  <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: black" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">E-Commerce</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+      <div class="container">
+        <a class="navbar-brand" href="#page-top">E-Commerce</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="./cart.html">Cart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./login.html">Login</a></li>
-                </ul>
-            </div>
+            <li class="nav-item"><a class="nav-link" href="./cart.html">Cart</a></li>
+            <li class="nav-item"><a class="nav-link" id="loginBtn" href="./login.html">Login</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="container">
@@ -116,305 +122,258 @@
     <!-- contact form -->
 
     <div class="container bg-dark p-4 contact">
-        <form class="row g-3 needs-validation d-flex justify-content-center" id="sellingForm" novalidate>
-            <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">First name</label>
-                <input type="text" class="form-control nameValidate" id="validationCustom01" value="" required>
-                <div class="invalid-feedback">
-                    Please enter a valid name
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Last name</label>
-                <input type="text" class="form-control nameValidate2" id="validationCustom02" value="" required>
-                <div class="invalid-feedback">
-                    Please enter a valid name
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationNumber" class="form-label">Phone Number</label>
-                <div class="input-group has-validation">
-                    <input type="number" class="form-control" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" id="password" required>
-                    <div class="invalid-feedback">
-                        Please enter a Phone number.
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 mb-3">
-                <label for="validationCustom04" class="form-label">Address</label>
-                <input type="text" class="form-control" id="validationCustom04" value="" required>
-                <div class="invalid-feedback">
-                    Please provide a valid Address.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationCustom05" class="form-label">Country</label>
-                <input type="text" class="form-control nameValidate" id="validationCustom05" required>
-                <div class="invalid-feedback">
-                    Please provide a valid Country.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationCustom05" class="form-label">City</label>
-                <input type="text" class="form-control nameValidate" id="validationCustom06" required>
-                <div class="invalid-feedback">
-                    Please provide a valid City.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationCustom05" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="validationCustom07" required>
-                <div class="invalid-feedback">
-                    Please provide a valid zip.
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Agree to terms and conditions
-                    </label>
-                    <div class="invalid-feedback">
-                        You must agree before submitting.
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-center">
-                <!-- <a href="cart.html"><input class="btn btn-primary w-75 m-1" value="Back to cart" type=”submit”/> </a> -->
-                <a class="btn btn-primary m-1" href="cart.html">Back to cart</a>
-                <!-- <a href="cart.html"><button class="btn btn-primary m-1">Back to cart</button></a> -->
-                <button class="btn btn-primary m-1" type="submit">Confirm purchase</button>
-            </div>
-        </form>
+      <form class="row g-3 needs-validation d-flex justify-content-center" id="sellingForm" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">First name</label>
+          <input type="text" class="form-control nameValidate" id="validationCustom01" value="" required />
+          <div class="invalid-feedback">Please enter a valid name</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control nameValidate2" id="validationCustom02" value="" required />
+          <div class="invalid-feedback">Please enter a valid name</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationNumber" class="form-label">Phone Number</label>
+          <div class="input-group has-validation">
+            <input type="number" class="form-control" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" id="password" required />
+            <div class="invalid-feedback">Please enter a Phone number.</div>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="validationCustom04" class="form-label">Address</label>
+          <input type="text" class="form-control" id="validationCustom04" value="" required />
+          <div class="invalid-feedback">Please provide a valid Address.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Country</label>
+          <input type="text" class="form-control nameValidate" id="validationCustom05" required />
+          <div class="invalid-feedback">Please provide a valid Country.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">City</label>
+          <input type="text" class="form-control nameValidate" id="validationCustom06" required />
+          <div class="invalid-feedback">Please provide a valid City.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom07" required />
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+            <label class="form-check-label" for="invalidCheck"> Agree to terms and conditions </label>
+            <div class="invalid-feedback">You must agree before submitting.</div>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <!-- <a href="cart.html"><input class="btn btn-primary w-75 m-1" value="Back to cart" type=”submit”/> </a> -->
+          <a class="btn btn-primary m-1" href="cart.html">Back to cart</a>
+          <!-- <a href="cart.html"><button class="btn btn-primary m-1">Back to cart</button></a> -->
+          <button class="btn btn-primary m-1" type="submit">Confirm purchase</button>
+        </div>
+      </form>
     </div>
 
     <footer class="footer py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2022</div>
+          <div class="col-lg-4 my-3 my-lg-0">
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+          </div>
         </div>
+      </div>
     </footer>
 
-
-
-
-
     <script>
+      // function validation() {
+      //     var password = document.querySelector('#validationCustom01');
 
-        // function validation() {
-        //     var password = document.querySelector('#validationCustom01');
+      //     var passErr = true;
 
-        //     var passErr = true;
+      //         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+      //         if (regex.test(password) == false) {
+      //             username.classList.remove('is-valid');
+      //             username.classList.add('is-invalid');
+      //             return false;
+      //         } else {
+      //             password.classList.remove('is-invalid');
+      //             password.classList.add('is-valid');
+      //             return true;
 
-        //         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
-        //         if (regex.test(password) == false) {
-        //             username.classList.remove('is-valid');
-        //             username.classList.add('is-invalid');
-        //             return false;
-        //         } else {
-        //             password.classList.remove('is-invalid');
-        //             password.classList.add('is-valid');
-        //             return true;
+      //     }
 
-        //     }
+      //     if (passErr == true) {
+      //         return false;
+      //     } else {
+      //         alert("Signed in successfully");
+      //     }
+      // }
 
-        //     if (passErr == true) {
-        //         return false;
-        //     } else {
-        //         alert("Signed in successfully");
-        //     }
-        // }
+      // document.querySelector('#email').addEventListener('blur', validateEmail);
 
-        // document.querySelector('#email').addEventListener('blur', validateEmail);
+      // document.querySelector('#password').addEventListener('blur', validatePassword);
 
-        // document.querySelector('#password').addEventListener('blur', validatePassword);
+      // document.querySelector('.nameValidate').addEventListener('blur', validateUsername);
+      // document.querySelector('.nameValidate2').addEventListener('blur', validateUsername2);
 
-        // document.querySelector('.nameValidate').addEventListener('blur', validateUsername);
-        // document.querySelector('.nameValidate2').addEventListener('blur', validateUsername2);
+      // const reSpaces =  /^[a-zA-Z ]+$/;
 
-        // const reSpaces =  /^[a-zA-Z ]+$/;
+      // function validateUsername(e) {
+      //     const username = document.querySelector('.nameValidate');
+      //     if (reSpaces.test(username.value)) {
+      //         username.classList.remove('is-invalid');
+      //         username.classList.add('is-valid');
+      //         return true;
+      //     } else {
+      //         username.classList.remove('is-valid');
 
-        // function validateUsername(e) {
-        //     const username = document.querySelector('.nameValidate');
-        //     if (reSpaces.test(username.value)) {
-        //         username.classList.remove('is-invalid');
-        //         username.classList.add('is-valid');
-        //         return true;
-        //     } else {
-        //         username.classList.remove('is-valid');
+      //         username.classList.add('is-invalid');
+      //         return false;
+      //     }
+      // }
 
-        //         username.classList.add('is-invalid');
-        //         return false;
-        //     }
-        // }
+      // function validateEmail(e) {
+      //     const email = document.querySelector('#email');
+      //     const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
 
+      //     if (reSpaces.test(email.value) && re.test(email.value)) {
+      //         email.classList.remove('is-invalid');
+      //         email.classList.add('is-valid');
 
-        // function validateEmail(e) {
-        //     const email = document.querySelector('#email');
-        //     const re = /^([a-zA-Z0-9_\-?\.?]){3,}@([a-zA-Z]){3,}\.([a-zA-Z]){2,5}$/;
+      //         return true;
+      //     } else {
+      //         email.classList.add('is-invalid');
+      //         email.classList.remove('is-valid');
 
-        //     if (reSpaces.test(email.value) && re.test(email.value)) {
-        //         email.classList.remove('is-invalid');
-        //         email.classList.add('is-valid');
+      //         return false;
+      //     }
+      // }
 
-        //         return true;
-        //     } else {
-        //         email.classList.add('is-invalid');
-        //         email.classList.remove('is-valid');
+      // function validatePassword() {
+      //     const password = document.querySelector('#password');
+      //     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
+      //     if (re.test(password.value) && reSpaces.test(password.value)) {
+      //         password.classList.remove('is-invalid');
+      //         password.classList.add('is-valid');
 
-        //         return false;
-        //     }
-        // }
+      //         return true;
+      //     } else {
+      //         password.classList.add('is-invalid');
+      //         password.classList.remove('is-valid');
 
-        // function validatePassword() {
-        //     const password = document.querySelector('#password');
-        //     const re = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})(?=.*[!@#$%^&*])/;
-        //     if (re.test(password.value) && reSpaces.test(password.value)) {
-        //         password.classList.remove('is-invalid');
-        //         password.classList.add('is-valid');
+      //         return false;
+      //     }
+      // }
 
-        //         return true;
-        //     } else {
-        //         password.classList.add('is-invalid');
-        //         password.classList.remove('is-valid');
+      // (function () {
+      //     const forms = document.querySelectorAll('.needs-validation');
 
-        //         return false;
-        //     }
-        // }
+      //     for (let form of forms) {
+      //         form.addEventListener(
+      //             'submit',
+      //             function (event) {
+      //                 if (
+      //                     !form.checkValidity() ||
+      //                     // !validateEmail() ||
+      //                     !validateUsername()||
+      //                     !validateUsernameLast()
+      //                     // !validatePassword()
+      //                 ) {
+      //                     event.preventDefault();
+      //                     event.stopPropagation();
+      //                 } else {
+      //                     form.classList.add('was-validated');
+      //                 }
+      //             },
+      //             false
+      //         );
+      //     }
+      // })();
 
-        // (function () {
-        //     const forms = document.querySelectorAll('.needs-validation');
+      // const inputs = document.querySelectorAll('input');
 
-        //     for (let form of forms) {
-        //         form.addEventListener(
-        //             'submit',
-        //             function (event) {
-        //                 if (
-        //                     !form.checkValidity() ||
-        //                     // !validateEmail() ||
-        //                     !validateUsername()|| 
-        //                     !validateUsernameLast() 
-        //                     // !validatePassword()
-        //                 ) {
-        //                     event.preventDefault();
-        //                     event.stopPropagation();
-        //                 } else {
-        //                     form.classList.add('was-validated');
-        //                 }
-        //             },
-        //             false
-        //         );
-        //     }
-        // })();
+      // const patterns = {
+      //     validationCustom01: /^[a-z\d]{5,12}$/i,
+      //     validationCustom02: /^[\d\w@-]{8,20}$/i,
+      //     validationCustom03: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+      //     validationCustom04: /^\d{3}-\d{3}-\d{4}$/
+      // };
 
-        // const inputs = document.querySelectorAll('input');
+      // inputs.forEach((input) => {
+      //     input.addEventListener('keyup', (e) => {
+      //         validate(e.target, patterns[e.target.attributes.id.value]);
+      //     });
+      // });
 
-        // const patterns = {
-        //     validationCustom01: /^[a-z\d]{5,12}$/i,
-        //     validationCustom02: /^[\d\w@-]{8,20}$/i,
-        //     validationCustom03: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
-        //     validationCustom04: /^\d{3}-\d{3}-\d{4}$/
-        // };
+      // function validate(field, regex) {
+      //     if (regex.test(field.value)) {
+      //         field.className = 'form-control valid';
+      //     } else {
+      //         field.className = 'form-control invalid';
+      //     }
+      // }
 
-        // inputs.forEach((input) => {
-        //     input.addEventListener('keyup', (e) => {
-        //         validate(e.target, patterns[e.target.attributes.id.value]);
-        //     });
-        // });
+      var p = document.querySelector("#password");
+      let isPasswordMatch = false;
+      let isPasswordValid = false;
+      const passwordPattern = /.{8,20}/;
+      const form = document.getElementById("sellingForm");
 
-        // function validate(field, regex) {
-        //     if (regex.test(field.value)) {
-        //         field.className = 'form-control valid';
-        //     } else {
-        //         field.className = 'form-control invalid';
-        //     }
-        // }
+      form.addEventListener("input", function (event) {
+        const formData = new FormData(form);
+        const password = p.value;
 
+        // const repeatPassword = formData.get('repeatPassword');
 
-        var p = document.querySelector("#password")
-        let isPasswordMatch = false;
-        let isPasswordValid = false;
-        const passwordPattern = /.{8,20}/;
-        const form = document.getElementById('sellingForm');
+        // Validate the pattern again.
+        isPasswordValid = passwordPattern.test(password);
 
-        form.addEventListener('input', function (event) {
-            const formData = new FormData(form);
-            const password = p.value;
-            
-            // const repeatPassword = formData.get('repeatPassword');
+        // This will either be true or false based on if the values are the same or not.
+        // isPasswordMatch = repeatPassword !== '' && password === repeatPassword;
+      });
 
-            // Validate the pattern again. 
-            isPasswordValid = passwordPattern.test(password);
+      form.addEventListener("submit", function (event) {
+        // If either the form is invalid or the passwords don't match, stop!
+        if (form.checkValidity() === false || isPasswordValid !== true) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      });
 
-            // This will either be true or false based on if the values are the same or not.
-            // isPasswordMatch = repeatPassword !== '' && password === repeatPassword;
-        });
+      // (function () {
+      //     'use strict'
 
-        form.addEventListener('submit', function (event) {
-            // If either the form is invalid or the passwords don't match, stop!
-            if (
-                form.checkValidity() === false ||
-                (isPasswordValid !== true)
-            ) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        });
+      //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      //     var forms = document.querySelectorAll('.needs-validation')
 
+      //     // Loop over them and prevent submission
+      //     Array.prototype.slice.call(forms)
+      //         .forEach(function (form) {
+      //             form.addEventListener('submit', function (event) {
+      //                 if (!form.checkValidity()) {
+      //                     event.preventDefault()
+      //                     event.stopPropagation()
+      //                 }
 
-
-
-
-
-
-
-
-
-
-        // (function () {
-        //     'use strict'
-
-        //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        //     var forms = document.querySelectorAll('.needs-validation')
-
-        //     // Loop over them and prevent submission
-        //     Array.prototype.slice.call(forms)
-        //         .forEach(function (form) {
-        //             form.addEventListener('submit', function (event) {
-        //                 if (!form.checkValidity()) {
-        //                     event.preventDefault()
-        //                     event.stopPropagation()
-        //                 }
-
-        //                 form.classList.add('was-validated')
-        //             }, false)
-        //         })
-        // })()
-
-
+      //                 form.classList.add('was-validated')
+      //             }, false)
+      //         })
+      // })()
     </script>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/scripts.js"></script>
 
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
-
+  </body>
 </html>
