@@ -508,4 +508,5 @@ function deleteCartFromLS(cartId) {
   counterArr = counterArr.filter((cart) => cart.id != cartId);
   addCartToLocalStorage(counterArr);
 }
+console.log("ahmed");
 //==================================================End Cart Page===========================================
