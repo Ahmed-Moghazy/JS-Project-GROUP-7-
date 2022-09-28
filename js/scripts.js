@@ -322,7 +322,10 @@ window.onload = function () {
   // Function to retrieve initial subtotal price of cart items
   function getInitialSubTotal() {
     for (let i = 0; i < trashBtns.length; i++) {
-      const priceofOne = splitPrice(price[i].innerText).amount;
+      let priceofOne;
+      if (priceofOne) {
+        priceofOne = splitPrice(cartPrice[i].innerText).amount;
+      }
       subTotal += priceofOne;
       subtotal.innerText = `$${subTotal}`;
     }
@@ -356,7 +359,10 @@ window.onload = function () {
   }
   // Updating item price based on quantity input change (on change)
   for (let i = 0; i < quantity.length; i++) {
-    const priceofOne = splitPrice(cartPrice[i].innerHTML).amount;
+    let priceofOne;
+    if (priceofOne) {
+      priceofOne = splitPrice(cartPrice[i].innerText).amount;
+    }
     if (quantity[i]) {
       quantity[i].addEventListener("change", function () {
         if (quantity[i].value <= 10) {
@@ -374,7 +380,11 @@ window.onload = function () {
   // Updating item price based on quantity input change (using plus button)
 
   for (let i = 0; i < plusBtns.length; i++) {
-    const priceofOne = splitPrice(cartPrice[i].innerHTML).amount;
+    let priceofOne;
+    if (priceofOne) {
+      priceofOne = splitPrice(cartPrice[i].innerText).amount;
+      console.log(typeof priceofOne);
+    }
 
     if (plusBtns[i]) {
       plusBtns[i].addEventListener("click", function (event) {
@@ -392,7 +402,11 @@ window.onload = function () {
 
   // Updating item price based on quantity input change (using minus button)
   for (let i = 0; i < minusBtns.length; i++) {
-    const priceofOne = splitPrice(cartPrice[i].innerHTML).amount;
+    let priceofOne;
+    if (cartPrice[i]) {
+      priceofOne = splitPrice(cartPrice[i].innerText).amount;
+    }
+    console.log(typeof priceofOne);
     if (minusBtns[i]) {
       minusBtns[i].addEventListener("click", function () {
         if (quantity[i].value > 1) {
@@ -409,7 +423,7 @@ window.onload = function () {
 
   // Retrieving shipping fee
 
-  let shippingFee = splitPrice(shippingfee.innerHTML).amount;
+  let shippingFee = splitPrice(shippingfee.innerText).amount;
   shippingfee.innerText = `$${shippingFee}`;
 
   // Calculating total price of purchases
@@ -464,7 +478,7 @@ if (conBtn) {
                     <a class="plusBtn text-decoration-none btn-dark rounded-end add-cart" style="width: 22px; text-align: center; cursor: pointer" >+</a>
                   </div>
                   <div>
-                    <h5 class=" priceTxt fw-normal mb-0">${Number(cartPrice[i].innerHTML) * counterTxt[i].value}</h5>
+                    <h5 class=" priceTxt fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
                   </div>
                   <a href="#!" class="trashBin" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
                 </div>
@@ -495,140 +509,3 @@ function deleteCartFromLS(cartId) {
   addCartToLocalStorage(counterArr);
 }
 //==================================================End Cart Page===========================================
-//==================================================Erini: Cart Page Price calculations=====================
-
-// // Declaring elements
-// let cartCard = document.getElementsByClassName("cartCard");
-// let plusBtns = document.getElementsByClassName("plusBtn");
-// let minusBtns = document.getElementsByClassName("minusBtn");
-// let quantity = document.getElementsByClassName("quantity");
-// let price = document.getElementsByClassName("priceTxt");
-// let trashBtns = document.getElementsByClassName("trashBin");
-// let itemsNum = document.getElementById("itemsNum");
-// let shippingfee = document.getElementById("shippingFee");
-// let total = document.getElementsByClassName("total");
-// let subtotal = document.getElementById("subtotal");
-// let subTotal = 0;
-
-// //Mapping number of items on load to "You have # items in your cart"
-
-// if (itemsNum) {
-//   itemsNum.innerText = trashBtns.length;
-// }
-
-// // <-----------------------Functions----------------------->
-
-// // Function to split currency and amount of product price
-// let splitPrice = function (string) {
-//   let amount = string.match(/[0-9]+([,.][0-9]+)?/);
-//   let unit = string.replace(/[0-9]+([,.][0-9]+)?/, "");
-//   if (amount && unit) {
-//     return {
-//       amount: +amount[0].replace(",", "."),
-//       currency: unit,
-//     };
-//   }
-//   return {
-//     amount: +amount[0].replace(",", "."),
-//   };
-// };
-
-// // Function to retrieve initial subtotal price of cart items
-// function getInitialSubTotal() {
-//   for (let i = 0; i < trashBtns.length; i++) {
-//     const priceofOne = splitPrice(price[i].innerText).amount;
-//     subTotal += priceofOne;
-//     subtotal.innerText = `$${subTotal}`;
-//   }
-// }
-
-// getInitialSubTotal();
-
-// // Removing item when clicking on trashbin (delete)
-// for (let i = 0; i < trashBtns.length; i++) {
-//   if (trashBtns[i]) {
-//     trashBtns[i].addEventListener("click", function (event) {
-//       console.log(cartCard);
-//       console.log(quantity.length);
-//       event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.remove();
-//       // cartCard[i].remove();
-//       console.log(cartCard);
-//       console.log(quantity.length);
-//       // Updating subtotal when an item is removed
-//       let button = event.currentTarget;
-//       let removedPrice = splitPrice(button.previousElementSibling.innerText).amount;
-//       subTotal -= removedPrice;
-//       subtotal.innerText = `$${subTotal}`;
-//       getTotalOfPurchase();
-//       //Updating title of "You have # items in your cart"
-//       itemsNum.innerText = trashBtns.length;
-//     });
-//   }
-// }
-// // Updating item price based on quantity input change (on change)
-// for (let i = 0; i < quantity.length; i++) {
-//   const priceofOne = splitPrice(price[i].innerText).amount;
-//   if (quantity[i]) {
-//     quantity[i].addEventListener("change", function () {
-//       if (quantity[i].value <= 10) {
-//         let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
-//         console.log(itemsPrice);
-//         price[i].innerText = `$${itemsPrice}`;
-//         subTotal = 0;
-//         getInitialSubTotal();
-//         getTotalOfPurchase();
-//       }
-//     });
-//   }
-// }
-
-// // Updating item price based on quantity input change (using plus button)
-// for (let i = 0; i < plusBtns.length; i++) {
-//   const priceofOne = splitPrice(price[i].innerText).amount;
-//   if (plusBtns[i]) {
-//     plusBtns[i].addEventListener("click", function (event) {
-//       if (quantity[i].value < 10) {
-//         quantity[i].value++;
-//         let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
-//         price[i].innerText = `$${itemsPrice}`;
-//         subTotal += Number(priceofOne);
-//         subtotal.innerText = `$${subTotal}`;
-//         getTotalOfPurchase();
-//       }
-//     });
-//   }
-// }
-
-// // Updating item price based on quantity input change (using minus button)
-// for (let i = 0; i < minusBtns.length; i++) {
-//   const priceofOne = splitPrice(price[i].innerText).amount;
-//   if (minusBtns[i]) {
-//     minusBtns[i].addEventListener("click", function () {
-//       if (quantity[i].value > 1) {
-//         quantity[i].value--;
-//         let itemsPrice = Number(`${quantity[i].value * priceofOne}`);
-//         price[i].innerText = `$${itemsPrice}`;
-//         subTotal -= Number(priceofOne);
-//         subtotal.innerText = `$${subTotal}`;
-//         getTotalOfPurchase();
-//       }
-//     });
-//   }
-// }
-
-// // Retrieving shipping fee
-// let shippingFee;
-// if (shippingFee) {
-//   shippingFee = splitPrice(shippingfee.innerText).amount;
-//   shippingfee.innerText = `$${shippingFee}`;
-// }
-// // Calculating total price of purchases
-
-// function getTotalOfPurchase() {
-//   for (let i = 0; i < total.length; i++) {
-//     let totalPrice = `${subTotal + shippingFee}`;
-//     total[i].innerText = `$${totalPrice}`;
-//   }
-// }
-
-// getTotalOfPurchase();
