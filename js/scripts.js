@@ -53,11 +53,15 @@ let nav = document.querySelector(".header-nav");
 let scrol;
 document.onscroll = function () {
   if (nav) {
-    nav.style.display = "block";
-    clearTimeout(scrol);
-    scrol = setTimeout(function () {
-      nav.style.display = "none";
-    }, 2000);
+    if (nav.style.top == "0") {
+      nav.style.display = "block";
+    } else {
+      nav.style.display = "block";
+      clearTimeout(scrol);
+      scrol = setTimeout(function () {
+        nav.style.display = "none";
+      }, 2000);
+    }
   }
 };
 // modal add cart
@@ -222,6 +226,7 @@ window.onload = function () {
   let logind = window.localStorage.getItem("UserInfo");
 
   let localD = JSON.parse(logind);
+  if(localD) {
   let signBtn = document.querySelector("#signBtn");
   let loginBtn = document.querySelector("#loginBtn");
   for (let i = 0; i < localD.length; i++) {
@@ -234,6 +239,7 @@ window.onload = function () {
       }
     }
   }
+}
   // Get Cart From Local To Cart Page
   let cartPage = document.querySelector(".cartdata");
   let cartDataLS = window.localStorage.getItem("cart");
@@ -242,6 +248,7 @@ window.onload = function () {
     for (let i = 0; i < cartDataArr.length; i++) {
       cartPage.insertAdjacentHTML("beforeend", cartDataArr[i]);
     }
+    //////
   }
 
   // If user Log out change the value of login in local storage to false
@@ -268,64 +275,65 @@ window.onload = function () {
       addSignupDataToLS(signupArray);
     }
   }
-  //==================================================End Log In Page===========================================
-  //==================================================Start Cart Page===========================================
-  //   let addToCart = document.querySelectorAll(".add-to-cart");
-  let cartHeader = document.querySelectorAll(".cart-title");
-  let cartInfo = document.querySelectorAll(".cart-info");
-  let cartImg = document.querySelectorAll(".cart-img");
-  let cartPrice = document.querySelectorAll(".cart-price");
-  let counterArr = [];
-  //   let cartArray = [];
-  if (localStorage.getItem("cart")) {
-    counterArr = JSON.parse(localStorage.getItem("cart"));
-  }
-  //   if (addToCart) {
-  //     for (let i = 0; i < addToCart.length; i++) {
-  //       addToCart[i].addEventListener("click", function () {
-  //         let cartData = ` <div class="card mb-4">
-  //   <div class="card-body">
-  //   <div class="d-flex gap-3 justify-content-between">
-  //           <div class="d-flex flex-row align-items-center">
-  //             <div>
-  //               <img
-  //                 src="${cartImg[i].src}"
-  //                 class="img-fluid rounded-3"
-  //                 alt="Shopping item"
-  //                 style="width: 110px"
-  //               />
-  //             </div>
-  //             <div class="ms-3">
-  //               <h5>${cartHeader[i].innerHTML}</h5>
-  //               <p class="small mb-0">${cartInfo[i].innerHTML}</p>
-  //             </div>
-  //           </div>
-  //           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
-  //             <div class="d-flex gap-1">
-  //               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
+};
+//==================================================End Log In Page===========================================
+//==================================================Start Cart Page===========================================
+//   let addToCart = document.querySelectorAll(".add-to-cart");
+let cartHeader = document.querySelectorAll(".cart-title");
+let cartInfo = document.querySelectorAll(".cart-info");
+let cartImg = document.querySelectorAll(".cart-img");
+let cartPrice = document.querySelectorAll(".cart-price");
+let counterArr = [];
+//   let cartArray = [];
+if (localStorage.getItem("cart")) {
+  counterArr = JSON.parse(localStorage.getItem("cart"));
+}
+//   if (addToCart) {
+//     for (let i = 0; i < addToCart.length; i++) {
+//       addToCart[i].addEventListener("click", function () {
+//         let cartData = ` <div class="card mb-4">
+//   <div class="card-body">
+//   <div class="d-flex gap-3 justify-content-between">
+//           <div class="d-flex flex-row align-items-center">
+//             <div>
+//               <img
+//                 src="${cartImg[i].src}"
+//                 class="img-fluid rounded-3"
+//                 alt="Shopping item"
+//                 style="width: 110px"
+//               />
+//             </div>
+//             <div class="ms-3">
+//               <h5>${cartHeader[i].innerHTML}</h5>
+//               <p class="small mb-0">${cartInfo[i].innerHTML}</p>
+//             </div>
+//           </div>
+//           <div class="d-flex flex-row align-items-center justify-content-between gap-2">
+//             <div class="d-flex gap-1">
+//               <a class="text-decoration-none btn-dark rounded-start" href="#" style="width: 22px; text-align: center">-</a>
 
-  //               <input class="input-group border border-none cont" style="width: 30px" value = "" />
+//               <input class="input-group border border-none cont" style="width: 30px" value = "" />
 
-  //               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
-  //             </div>
-  //             <div>
-  //               <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
-  //             </div>
-  //             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       </div>`;
-  //         cartArray.push(cartData);
-  //         // console.log(cartArray);
-  //         window.localStorage.setItem("cart", JSON.stringify(cartArray));
-  //       });
-  //     }
-  //   }
-  if (conBtn) {
-    for (let i = 0; i < conBtn.length; i++) {
-      conBtn[i].addEventListener("click", function () {
-        let cartData = ` <div class="card mb-4">
+//               <a class="text-decoration-none btn-dark rounded-end" style="width: 22px; text-align: center" href="#">+</a>
+//             </div>
+//             <div>
+//               <h5 class="fw-normal mb-0">${cartPrice[i].innerHTML}</h5>
+//             </div>
+//             <a href="#!" style="color: #b22727"><i class="fas fa-trash-alt"></i></a>
+//           </div>
+//         </div>
+//       </div>
+//       </div>`;
+//         cartArray.push(cartData);
+//         // console.log(cartArray);
+//         window.localStorage.setItem("cart", JSON.stringify(cartArray));
+//       });
+//     }
+//   }
+if (conBtn) {
+  for (let i = 0; i < conBtn.length; i++) {
+    conBtn[i].addEventListener("click", function () {
+      let cartData = ` <div class="card mb-4">
         <div class="card-body">
         <div class="d-flex gap-3 justify-content-between">
                 <div class="d-flex flex-row align-items-center">
@@ -358,10 +366,10 @@ window.onload = function () {
               </div>
             </div>
             </div>`;
-        counterArr.push(cartData);
-        window.localStorage.setItem("cart", JSON.stringify(counterArr));
-      });
-    }
+      counterArr.push(cartData);
+      window.localStorage.setItem("cart", JSON.stringify(counterArr));
+    });
   }
-};
-//==================================================End Cart Page===========================================
+}
+
+//==================================================End Cart Page==========================================
