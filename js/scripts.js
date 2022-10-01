@@ -493,8 +493,9 @@ window.onload = function () {
       }
 
       // Card Number
-      if (cardNumber.value == "" || cardNumber.value == null) {
+      if (cardNumber.value.length !== 16 ) {
         message.push("Card-Number is required");
+        cardNumberError.innerText = "Must enter 16 digit Phone number.";
         cardNumberError.style.display = "block";
       } else {
         cardNumberError.style.display = "none";
@@ -511,8 +512,9 @@ window.onload = function () {
       }
 
       // cvv
-      if (cardCvv.value == "" || cardCvv.value == null) {
+      if (cardCvv.value.length !== 3) {
         message.push("cvv is required");
+        cardCvvError.innerText = "Must enter 3 digit Phone number.";
         cardCvvError.style.display = "block";
       } else {
         cardCvvError.style.display = "none";
