@@ -20,7 +20,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top header-nav" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#page-top">E-Commerce</a>
+        <a class="navbar-brand" href="#page-top">Tech-Scope</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -57,101 +57,229 @@
     <section class="page-section bg-light" id="Product">
       <div class="container">
         <div class="text-center">
-          <h2 class="section-heading text-uppercase">Product</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h2 class="section-heading text-uppercase">Products</h2>
+          <h3 class="section-subheading text-muted">Browse our products.</h3>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 1-->
-            <div class="portfolio-item" style="margin-bottom: 100px">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary1.jpg" alt="..." />
-                </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Threads</div>
-                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-              </div>
-            </div>
+        <!-- ////////////////////////////// -->
+        <!-- Tabs or Pills can be used in a card with the help of .nav-{tabs|pills} and .card-header-{tabs|pills} classes -->
+        <div class="card">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"
+                  >All</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"
+                  >Laptops</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab2" data-bs-toggle="tab" href="#profile2" role="tab" aria-controls="profile2" aria-selected="false"
+                  >Mobiles</a
+                >
+              </li>
+            </ul>
           </div>
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 2-->
-            <div class="portfolio-item">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary2.png" alt="..." />
+          <div class="card-body">
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item" style="margin-bottom: 100px">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab1.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Lenovo Ideapad 3</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab2.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Acer Aspire 5 A515-45-R74Z Slim</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab3.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">HP 15 New 2022</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!-- Portfolio item 4-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob1.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Apple iPhone 13 Pro Max 256GB Blue</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 5-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob2.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">iPhone 13 Pro Max with FaceTime (1TB) - Silver</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <!-- Portfolio item 6-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob3.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Iphone X With Facetime - 64 GB, Space Grey</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Explore</div>
-                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4">
-            <!-- Portfolio item 3-->
-            <div class="portfolio-item">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary3.jpg" alt="..." />
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item" style="margin-bottom: 100px">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab1.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Lenovo Ideapad 3</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab2.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Acer Aspire 5 A515-45-R74Z Slim</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/lab3.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">HP 15 New 2022</div>
+                        <div class="portfolio-caption-subheading text-muted">Laptop</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Finish</div>
-                <div class="portfolio-caption-subheading text-muted">Identity</div>
               </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-            <!-- Portfolio item 4-->
-            <div class="portfolio-item">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary4.jpg" alt="..." />
+              <div class="tab-pane fade" id="profile2" role="tabpane1" aria-labelledby="profile-tab2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!-- Portfolio item 4-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob1.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Apple iPhone 13 Pro Max 256GB Blue</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                    <!-- Portfolio item 5-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob2.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">iPhone 13 Pro Max with FaceTime (1TB) - Silver</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-6">
+                    <!-- Portfolio item 6-->
+                    <div class="portfolio-item">
+                      <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover item">
+                          <div class="portfolio-hover-content"></div>
+                          <img class="img-fluid" src="assets/img/portfolio/mob3.jpg" alt="..." />
+                        </div>
+                      </a>
+                      <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
+                        <div class="portfolio-caption-heading">Iphone X With Facetime - 64 GB, Space Grey</div>
+                        <div class="portfolio-caption-subheading text-muted">Mobile Phone</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Lines</div>
-                <div class="portfolio-caption-subheading text-muted">Branding</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-            <!-- Portfolio item 5-->
-            <div class="portfolio-item">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary5.jpg" alt="..." />
-                </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Southwest</div>
-                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <!-- Portfolio item 6-->
-            <div class="portfolio-item">
-              <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                <div class="portfolio-hover item">
-                  <div class="portfolio-hover-content"></div>
-                  <img class="img-fluid" src="assets/img/portfolio/gallary6.jpg" alt="..." />
-                </div>
-              </a>
-              <div class="portfolio-caption" style="text-align: center; margin-top: 30px">
-                <div class="portfolio-caption-heading">Window</div>
-                <div class="portfolio-caption-subheading text-muted">Photography</div>
               </div>
             </div>
           </div>
         </div>
+        <!-- ////////////////////////////// -->
       </div>
     </section>
     <!-- About-->
@@ -159,65 +287,76 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted mx-auto" style="width: 70%; font-size: 18px">
+            Although Agile software development teams are designed to be flexible, the truth is that there isn’t one person who can handle the entire
+            development process. Even for small projects, you’re likely going to need a team to pull everything together.<br /><br />
+            Our successful software development team works like a well-oiled machine, with each team member making important contributions to the
+            final project, giving our customers the best experience with well-designed web applications hosted on reliable servers and
+            well-constructed data bases..
+          </h3>
         </div>
         <ul class="timeline">
           <li>
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpeg" alt="..." /></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>2009-2011</h4>
-                <h4 class="subheading">Our Humble Beginnings</h4>
+                <h4 class="subheading">Frontend Developers</h4>
               </div>
               <div class="timeline-body">
                 <p class="text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                  quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                  The frontend developers are responsible for creating the part of the software product that the user sees. The developers are the
+                  team members who write code and handle the technical aspects of the project. They take the concept from the designer and create the
+                  user interface. They also work with the backend developers and other members of the team to make sure that the front end integrates
+                  properly with the back end.<br />
                 </p>
               </div>
             </div>
           </li>
           <li class="timeline-inverted">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpeg" alt="..." /></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>March 2011</h4>
-                <h4 class="subheading">An Agency is Born</h4>
+                <h4 class="subheading">Backend Developers</h4>
               </div>
               <div class="timeline-body">
                 <p class="text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                  quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                  The backend development team works on the behind-the-scenes functionality of the software program. While users don’t directly see
+                  the backend of the software program, it is essential for keeping the software program running.<br />Backend software developers are
+                  heavily experienced with coding and are often specialists. They work closely with other members of the development team to bring the
+                  functions of the app to life.
                 </p>
               </div>
             </div>
           </li>
           <li>
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpeg" alt="..." /></div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>December 2015</h4>
-                <h4 class="subheading">Transition to Full Service</h4>
+                <h4 class="subheading">UX/UI Designer</h4>
               </div>
               <div class="timeline-body">
                 <p class="text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                  quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                  The UX and UI designers are responsible for the way the software program looks and feels. UX stands for “user experience”, while UI
+                  stands for “user interface”. Some designers specialize in either UX or UI, while others are experienced with both. The designer will
+                  determine how the software program looks aesthetically as well as the way the features flow together. They work closely with the
+                  frontend development team throughout the project.
                 </p>
               </div>
             </div>
           </li>
           <li class="timeline-inverted">
-            <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+            <div class="timeline-image">
+              <img class="rounded-circle img-fluid" src="assets/img/about/3.jpeg" alt="..." />
+            </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>July 2020</h4>
-                <h4 class="subheading">Phase Two Expansion</h4>
+                <h4 class="subheading">QA Specialist</h4>
               </div>
               <div class="timeline-body">
                 <p class="text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui
-                  quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+                  QA engineers perform quality assurance on the software project at various points throughout the development process. They ensure
+                  that the product is working as intended and identify problems that the development team may have missed. The QA team is consistently
+                  testing the software to see how it is working, whether there are any bugs, and how the program could be improved.<br />
                 </p>
               </div>
             </div>
@@ -241,7 +380,7 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-4">
@@ -295,14 +434,6 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis
-              ea, alias ut unde.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
     <!-- Contact-->
@@ -310,7 +441,6 @@
       <div class="container">
         <div class="text-center">
           <h2 class="section-heading text-uppercase">Contact Us</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
         </div>
         <!-- * * * * * * * * * * * * * * *-->
         <!-- * * SB Forms Contact Form * *-->
@@ -374,6 +504,39 @@
     <!-- //////////////////////////////////////////// -->
     <div class="alert alert-success message-added" role="alert" style="display: none"></div>
     <div class="alert alert-danger message-deleted" role="alert" style="display: none"></div>
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Launch static backdrop modal</button> -->
+
+    <!-- <div
+      id="me"
+      class="check-login"
+      style="
+        width: 60%;
+        position: fixed;
+        top: 5px;
+
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 10000;
+        background-color: #ccc;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 20px;
+        flex-direction: column;
+        box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+      "
+    >
+      <h5 style="margin-bottom: 20px; font-size: 20px">You Shoud Login First</h5>
+      <a href="./pages/login.html"
+        ><button style="width: 100px; height: 50px; line-height: 50px; border: none; border-radius: 20px; color: #fff; background-color: gold">
+          Login
+        </button></a
+      >
+    </div> -->
+
     <!-- //////////////////////////////////////////// -->
     <!-- Footer-->
     <footer class="footer py-4">
@@ -395,7 +558,7 @@
     <!-- Portfolio Modals-->
     <!-- Portfolio item 1 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-9 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -403,31 +566,29 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Project details-->
-                  <h2 class="text-uppercase cart-title">Project Name1</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur1.</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary1.jpg" alt="..." />
+                  <h2 class="text-uppercase cart-title">Lenovo Ideapad 3</h2>
+                  <p class="item-intro text-muted cart-info">15.6" FHD Home and Business Laptop</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/lab1.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    15.6" FHD Home and Business Laptop AMD Ryzen 5 5500U 6 Cores Integrated AMD Radeon 7 Graphics 8GB RAM DDR4 256GB SSD 82KU003NUS
                   </p>
-                  <span class="fs-4 text-danger cart-price">111</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">514</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Threads
+                      <strong>Brand:</strong>
+                      Lenovo
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Illustration
+                      <strong>Series:</strong>
+                      Lenovo Ideapad
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="1" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">confirm</button>
                   </div>
@@ -440,7 +601,7 @@
     </div>
     <!-- Portfolio item 2 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-8 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -448,31 +609,30 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Project details-->
-                  <h2 class="text-uppercase cart-title">Project Name2</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur2.</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary2.png" alt="..." />
+                  <h2 class="text-uppercase cart-title">Acer Aspire 5 A515-45-R74Z Slim</h2>
+                  <p class="item-intro text-muted cart-info">15.6" Full HD IPS</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/lab2.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    AMD Ryzen 5 5500U Hexa-Core Mobile Processor | AMD Radeon Graphics | 8GB DDR4 | 256GB NVMe SSD | WiFi 6 | Backlit KB | Windows 11
+                    Home
                   </p>
-                  <span class="fs-4 text-danger cart-price">222</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">455</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Explore
+                      <strong>Brand:</strong>
+                      Acer
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Graphic Design
+                      <strong>Series:</strong>
+                      A515-45-R74Z
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="2" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">Confirm</button>
                   </div>
@@ -485,7 +645,7 @@
     </div>
     <!-- Portfolio item 3 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-8 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -493,31 +653,29 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Project details-->
-                  <h2 class="text-uppercase cart-title">Project Name3</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur.3</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary3.jpg" alt="..." />
+                  <h2 class="text-uppercase cart-title">HP 15 New 2022</h2>
+                  <p class="item-intro text-muted cart-info">15.6" HD LED Display</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/lab3.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    Intel Dual-Core Processor, Intel UHD Graphics, 16GB DDR4 RAM, 1TB SSD, Ethernet Port, USB Type-C, Long Battery Life, Windows 11
                   </p>
-                  <span class="fs-4 text-danger cart-price">333</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">499</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Finish
+                      <strong>Brand:</strong>
+                      HP
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Identity
+                      <strong>Series:</strong>
+                      Premium
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="3" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">Confirm</button>
                   </div>
@@ -530,7 +688,7 @@
     </div>
     <!-- Product item 4 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-8 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -538,31 +696,32 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Product details-->
-                  <h2 class="text-uppercase cart-title">Project Name 4</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur.4</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary4.jpg" alt="..." />
+                  <h2 class="text-uppercase cart-title">Apple iPhone 13 Pro Max 256GB Blue</h2>
+                  <p class="item-intro text-muted cart-info">6.7-inch Super Retina XDR display with ProMotion for a faster, more responsive feel</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/mob1.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    Cinematic mode adds shallow depth of field and shifts focus automatically in your videos. Pro camera system with new 12MP
+                    Telephoto, Wide, and Ultra Wide cameras. LiDAR Scanner. 6x optical zoom range. macro photography; Photographic Styles, ProRes
+                    video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording 12MP TrueDepth front camera with Night mode, 4K Dolby
+                    Vision HDR recording A15 Bionic chip for lightning-fast performance.
                   </p>
-                  <span class="fs-4 text-danger cart-price">444</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">1200</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Lines
+                      <strong>Brand:</strong>
+                      Apple
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Branding
+                      <strong>Model Name:</strong>
+                      IPhoneÂ 13Â ProÂ Max 256GB Sierra Blue
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="4" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">Confirm</button>
                   </div>
@@ -575,7 +734,7 @@
     </div>
     <!-- Product item 5 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-8 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -583,31 +742,32 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Product details-->
-                  <h2 class="text-uppercase cart-title">Project Name5</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur.5</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary5.jpg" alt="..." />
+                  <h2 class="text-uppercase cart-title">iPhone 13 Pro Max with FaceTime (1TB) - Silver</h2>
+                  <p class="item-intro text-muted cart-info">6.7-inch Super Retina XDR display with ProMotion for a faster, more responsive feel</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/mob2.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    Cinematic mode adds shallow depth of field and shifts focus automatically in your videos Pro camera system with new 12MP
+                    Telephoto, Wide, and Ultra Wide cameras; LiDAR Scanner; 6x optical zoom range; macro photography; Photographic Styles, ProRes
+                    video, Smart HDR 4, Night mode, Apple ProRAW, 4K Dolby Vision HDR recording 12MP TrueDepth front camera with Night mode, 4K Dolby
+                    Vision HDR recording A15 Bionic chip for lightning-fast performance
                   </p>
-                  <span class="fs-4 text-danger cart-price">555</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">1500</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Southwest
+                      <strong>Brand:</strong>
+                      Apple
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Website Design
+                      <strong>Model Name:</strong>
+                      IPhone 13 Pro Max 1TB Silver
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="5" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">Confirm</button>
                   </div>
@@ -620,7 +780,7 @@
     </div>
     <!-- Product item 6 modal popup-->
     <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" style="width: 50%; margin: 10px auto">
+      <div class="modal-dialog col-sm-9 col-lg-8 mx-auto">
         <div class="modal-content">
           <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
           <div class="container">
@@ -628,37 +788,62 @@
               <div class="col-lg-10">
                 <div class="modal-body modal-b">
                   <!-- Product details-->
-                  <h2 class="text-uppercase cart-title">Project Name6</h2>
-                  <p class="item-intro text-muted cart-info">Lorem ipsum dolor sit amet consectetur.6</p>
-                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/gallary6.jpg" alt="..." />
+                  <h2 class="text-uppercase cart-title">Iphone X With Facetime - 64 GB, Space Grey</h2>
+                  <p class="item-intro text-muted cart-info">3 GB Ram, Single Sim</p>
+                  <img class="img-fluid d-block mx-auto cart-img" src="assets/img/portfolio/mob3.jpg" alt="..." />
                   <p>
-                    Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa
-                    incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum,
-                    reiciendis facere nemo!
+                    Apple iPhone X is equipped with a 12MP rear camera. This iPhone X boasts a 5.8inch Super Retina display. The Apple iPhone X, with
+                    its smooth and efficient performance, brings the world to your fingertips. This Apple iPhone X has 4G LTE network support that
+                    allows you to enjoy blazing fast internet speeds on the go. Furthermore, it is driven by an A11 Bionic chip that runs all apps and
+                    games smoothly without a hint of lag.
                   </p>
-                  <span class="fs-4 text-danger cart-price">666</span>
+                  <span class="fs-4 text-danger">$</span><span class="fs-4 text-danger cart-price">700</span>
                   <ul class="list-inline">
                     <li>
-                      <strong>Client:</strong>
-                      Window
+                      <strong>Brand:</strong>
+                      Apple
                     </li>
                     <li>
-                      <strong>Category:</strong>
-                      Photography
+                      <strong>Model:</strong>
+                      X18-1408XT
                     </li>
                   </ul>
                   <div style="display: flex; justify-content: space-around; width: 100%">
                     <button class="btn btn-primary btn-xl text-uppercase add-btn confirm-btn add-to-cart" type="button">Add To Cart</button>
                     <div class="addCart" style="width: 30%">
-                      <button class="addBtn increse-cart">+</button>
-                      <input type="number" class="numTxt cart-num" id="6" />
-                      <button class="delBtn">-</button>
+                      <button class="delBtn rounded-start" style="width: 22px; text-align: center">-</button>
+                      <input type="number" style="width: 30px; text-align: center" class="numTxt cart-num" id="4" />
+                      <button class="addBtn increse-cart rounded-end" style="width: 22px; text-align: center">+</button>
                     </div>
                     <button class="btn btn-primary btn-xl text-uppercase con-btn" data-bs-dismiss="modal" type="button">Confirm</button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">You should loggin first to be able to buy products</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="./pages/login.html"><button type="button" class="btn btn-primary">Login</button></a>
           </div>
         </div>
       </div>

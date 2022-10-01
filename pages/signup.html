@@ -17,7 +17,6 @@
     <link href="../css/styles.css" rel="stylesheet" />
     <link href="../css/ourStyle.css" rel="stylesheet" />
   </head>
-
   <body>
     <section class="pt-5 pb-5 mt-0 align-items-center d-flex signup-bgcolor">
       <div class="container-fluid">
@@ -27,15 +26,6 @@
               <div class="card-body mx-auto">
                 <h4 class="card-title mt-3 text-center">Create Account</h4>
                 <p class="text-center">Get started with your free account</p>
-                <!-- <p>
-                                <a href="" class="btn btn-block btn-info">
-                                    <i class="fab fa-twitter mr-2"></i>Login via Twitter</a>
-                                <a href="" class="btn btn-block btn-primary">
-                                    <i class="fab fa-facebook-f mr-2"></i>Login via facebook</a>
-                            </p>
-                            <p class="text-muted font-weight-bold ">
-                                <span>OR</span>
-                            </p> -->
                 <form action="login.html">
                   <div class="form-group input-group mb-3">
                     <div class="input-group-prepend">
@@ -49,7 +39,8 @@
                     </div>
                     <input name="" class="form-control" placeholder="Email address" type="email" id="email" required />
                   </div>
-                  <div class="form-group input-group mb-3">
+                  <span class="signup-error">This E-mail is already exist</span>
+                  <div class="form-group input-group mb-3 my-2">
                     <div class="input-group-prepend">
                       <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
@@ -61,7 +52,9 @@
                     </div>
                     <input class="form-control" placeholder="Repeat password" type="password" id="confirm-password" required />
                   </div>
-                  <div class="form-group mb-3">
+                  <span class="pass-error">password is not the same</span>
+                  <span class="info-error">Please enter your data</span>
+                  <div class="form-group mb-3 my-3">
                     <button type="submit" class="btn btn-primary btn-block" id="submit">Create Account</button>
                   </div>
                   <p class="text-center">
